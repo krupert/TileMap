@@ -1,0 +1,21 @@
+﻿  stdafx.cpp
+  gameLoop.cpp
+  SFMLConsoleApp1.cpp
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(18): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(19): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(28): warning C4018: '<': signed/unsigned mismatch
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\sfmlconsoleapp1.cpp(25): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Menu.cpp
+  Map.cpp
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(18): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(19): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(28): warning C4018: '<': signed/unsigned mismatch
+  Gameplay.cpp
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(18): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(19): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\rupert\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\map.h(28): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'
