@@ -15,34 +15,18 @@ public:
 	bool load(sf::Vector2f tileSize, const int tiles[][16], sf::Vector2f WindowSize,  int width, int height, sf::Vector2f Camera)
 	{
 		
-		unsigned int displayWidth = ceil((WindowSize.x)/tileSize.x);
-		unsigned int displayHeight = ceil((WindowSize.y)/tileSize.y);
-		int startCoordX = static_cast<int>(ceil((Camera.x  - WindowSize.x / 2) / tileSize.x));
-		int startCoordY = static_cast<int>(ceil((Camera.y  - WindowSize.y / 2) / tileSize.y));
-
 		mapVertices.setPrimitiveType(sf::Quads);
-		mapVertices.resize(displayWidth*displayHeight * 4);
+		mapVertices.resize(width * height * 4);
 
-		for (int i = 0; i < displayHeight; i++)
+		for (int i = 0; i < height ; i++)
 		{
-			for (int j = 0; j < displayWidth; j++)
+			for (int j = 0; j < width; j++)
 			{
-				int tileID;
-
-				if ((startCoordX+j) >= 0 && (startCoordX+j) < width && (startCoordY+i) >= 0 && (startCoordY+i) < height)
-				{
-					tileID = tiles[(startCoordY + i)][startCoordX + j];
-				}
-				else
-				{
-					tileID = 4;			
-					
-				}
-
+				int tileID = tiles[i][j];
 
 				//int tileID = tiles[startCoordX + j + (startCoordY + i)*width];
 
-				sf::Vertex* quad = &mapVertices[(j + i * displayWidth )* 4];
+				sf::Vertex* quad = &mapVertices[(j + i * width )* 4];
 				
 
 				
@@ -50,7 +34,7 @@ public:
 				quad[0].position = sf::Vector2f(j * tileSize.x, i * tileSize.y);
 				quad[1].position = sf::Vector2f((j + 1 ) * tileSize.x, i * tileSize.y);
 				quad[2].position = sf::Vector2f((j + 1 )* tileSize.x, (i + 1 ) * tileSize.y);
-				quad[3].position = sf::Vector2f(j* tileSize.x, (i + 1 ) * tileSize.y);
+				quad[3].position = sf::Vector2f(j * tileSize.x, (i + 1 ) * tileSize.y);
 
 				
 				switch (tileID)

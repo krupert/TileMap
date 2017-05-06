@@ -27,6 +27,16 @@ int main()
 	mainGame.cameraPosition = sf::Vector2f(10.0f, 10.0f);
 	Input input;
 
+	if (!mainGame.renderTexture.create(1000, 1000))
+	{
+		// error...
+	}
+
+	sf::View view(sf::FloatRect(0, 200, 800, 800));
+	//window.setView(view);
+	//view.setCenter(100, 100);
+	//view.setViewport(sf::FloatRect(0.25f, 0.25, 0.5f, 0.5f));
+
 
 	while (window.isOpen())
 	{
@@ -97,7 +107,11 @@ int main()
 			break;
 		case game:
 			//mainGame.drawGame(window);
-			window.draw(mainGame.map);
+			const sf::Texture& texture = mainGame.renderTexture.getTexture();
+
+			// draw it to the window
+			
+			mainGame.drawGame(window);
 			break;
 		}
 

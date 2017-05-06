@@ -12,8 +12,10 @@ public:
 	sf::RectangleShape square;
 	void GetGameInput(sf::RenderWindow& window, Input input);
 	void drawGame(sf::RenderWindow& window);
-
+	sf::RenderTexture renderTexture;
+	sf::View view;
 	sf::Vector2f cameraPosition;
+	sf::Sprite mapSprite;
 
 private:
 	const int level[8][16] =

@@ -29,14 +29,30 @@ void Gameplay::GetGameInput(sf::RenderWindow& window, Input input)
 	}
 	else {}
 
+
+
 	if (!map.load(sf::Vector2f(TILE_SIZE, TILE_SIZE), level, static_cast<sf::Vector2f>(window.getSize()), 16, 8, cameraPosition))
 	{
 		//return -1;
 	}
+
+	renderTexture.clear();
+	renderTexture.draw(map);
+	renderTexture.display();
+
+	
 }
 
 void Gameplay::drawGame(sf::RenderWindow& window)
 {
-
+	view.setViewport(sf::FloatRect(0.f, 0.f, 1.f, 1.f));
+	view.setCenter(cameraPosition);
+	renderTexture.setView(view);
 	
+	const sf::Texture& texture = renderTexture.getTexture();
+
+	sf::Sprite testSprite(texture);
+	window.draw(testSprite);
+
+
 }
