@@ -15,10 +15,10 @@ public:
 	bool load(sf::Vector2f tileSize, const int tiles[][16], sf::Vector2f WindowSize,  int width, int height, sf::Vector2f Camera)
 	{
 		
-		unsigned int displayWidth = ceil(2 + (WindowSize.x)/tileSize.x);
-		unsigned int displayHeight = ceil(2 +(WindowSize.y)/tileSize.y);
-		int startCoordX = static_cast<int>(ceil(0.1f + (Camera.x  - WindowSize.x / 2) / tileSize.x));
-		int startCoordY = static_cast<int>(ceil(0.1f + (Camera.y  - WindowSize.y / 2) / tileSize.y));
+		unsigned int displayWidth = ceil((WindowSize.x)/tileSize.x);
+		unsigned int displayHeight = ceil((WindowSize.y)/tileSize.y);
+		int startCoordX = static_cast<int>(ceil((Camera.x  - WindowSize.x / 2) / tileSize.x));
+		int startCoordY = static_cast<int>(ceil((Camera.y  - WindowSize.y / 2) / tileSize.y));
 
 		mapVertices.setPrimitiveType(sf::Quads);
 		mapVertices.resize(displayWidth*displayHeight * 4);
@@ -47,10 +47,10 @@ public:
 
 				
 
-				quad[0].position = sf::Vector2f((j * tileSize.x - static_cast<int>(Camera.x) % 50), (i * tileSize.y - static_cast<int>(Camera.y) % 50));
-				quad[1].position = sf::Vector2f(((j + 1 ) * tileSize.x - static_cast<int>(Camera.x) % 50), (i * tileSize.y) - static_cast<int>(Camera.y) % 50);
-				quad[2].position = sf::Vector2f((j + 1 )* tileSize.x - static_cast<int>(Camera.x) % 50, (i + 1 ) * tileSize.y - static_cast<int>(Camera.y) % 50);
-				quad[3].position = sf::Vector2f((j* tileSize.x - static_cast<int>(Camera.x) % 50), (i + 1 ) * tileSize.y - static_cast<int>(Camera.y) % 50);
+				quad[0].position = sf::Vector2f(j * tileSize.x, i * tileSize.y);
+				quad[1].position = sf::Vector2f((j + 1 ) * tileSize.x, i * tileSize.y);
+				quad[2].position = sf::Vector2f((j + 1 )* tileSize.x, (i + 1 ) * tileSize.y);
+				quad[3].position = sf::Vector2f(j* tileSize.x, (i + 1 ) * tileSize.y);
 
 				
 				switch (tileID)

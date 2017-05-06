@@ -11,11 +11,11 @@ void Gameplay::GetGameInput(sf::RenderWindow& window, Input input)
 {
 	if (input.keyPressed(sf::Keyboard::Up) || input.keyPressed(sf::Keyboard::W))
 	{
-		cameraPosition.y += 10.0f;
+		cameraPosition.y -= 10.0f;
 	}
 	else if (input.keyPressed(sf::Keyboard::Down) || input.keyPressed(sf::Keyboard::S))
 	{
-		cameraPosition.y -= 10.0f;
+		cameraPosition.y += 10.0f;
 	}
 	else if (input.keyPressed(sf::Keyboard::Left) || input.keyPressed(sf::Keyboard::A))
 	{
