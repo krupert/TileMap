@@ -16,7 +16,7 @@ public:
 	sf::View view;
 	sf::Vector2f cameraPosition;
 	sf::Sprite mapSprite;
-
+	
 private:
 	const int level[8][16] =
 	{
@@ -29,4 +29,5 @@ private:
 		{2, 0, 1, 0, 3, 0, 2, 2, 2, 0, 1, 1, 1, 1, 1, 1 },
 		{0, 0, 1, 0, 3, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1 }
 	};
+	float moveSpeed = 10.f;
 };

@@ -9,29 +9,37 @@
 
 void Gameplay::GetGameInput(sf::RenderWindow& window, Input input)
 {
+
 	if (input.keyPressed(sf::Keyboard::Up) || input.keyPressed(sf::Keyboard::W))
 	{
-		cameraPosition.y -= 10.0f;
+		cameraPosition.y -= moveSpeed;
 	}
 	else if (input.keyPressed(sf::Keyboard::Down) || input.keyPressed(sf::Keyboard::S))
 	{
-		cameraPosition.y += 10.0f;
+		cameraPosition.y += moveSpeed;
 	}
 	else if (input.keyPressed(sf::Keyboard::Left) || input.keyPressed(sf::Keyboard::A))
 	{
-		cameraPosition.x -= 10.0f;
+		cameraPosition.x -= moveSpeed;
 	}
 	else if (input.keyPressed(sf::Keyboard::Right) || input.keyPressed(sf::Keyboard::D))
 	{
-		cameraPosition.x += 10.0f;
-		
-		
+		cameraPosition.x += moveSpeed;
 	}
 	else {}
 
+	if (input.keyHeld(sf::Keyboard::Space)) {
+		printf("Space Held \n");
+	}
+	if (input.keyReleased(sf::Keyboard::Space)) {
+		printf("Space Released \n");
+	}
+	if (input.keyReleased(sf::Keyboard::LShift)) {
+		printf("SHIFT Released \n");
+	}
 
 
-	if (!map.load(sf::Vector2f(TILE_SIZE, TILE_SIZE), level, static_cast<sf::Vector2f>(window.getSize()), 16, 8, cameraPosition))
+	if (!map.load(sf::Vector2f(TILE_SIZE, TILE_SIZE), level, 16, 8))
 	{
 		//return -1;
 	}

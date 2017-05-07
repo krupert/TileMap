@@ -12,7 +12,7 @@ public:
 	//static const int Tile_Width = 10;
 	//static const int Tile_Height = 10;
 	
-	bool load(sf::Vector2f tileSize, const int tiles[][16], sf::Vector2f WindowSize,  int width, int height, sf::Vector2f Camera)
+	bool load(sf::Vector2f tileSize, const int tiles[][16], int width, int height)
 	{
 		
 		mapVertices.setPrimitiveType(sf::Quads);

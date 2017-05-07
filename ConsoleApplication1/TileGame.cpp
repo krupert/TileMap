@@ -11,6 +11,11 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 800), "Game");
+
+
+	//Necessary for proper key holding, releasing:
+	window.setKeyRepeatEnabled(false);
+
 	sf::Font defaultFont;
 	if (!defaultFont.loadFromFile("resources/arial.ttf"))
 	{

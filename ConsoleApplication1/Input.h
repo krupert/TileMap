@@ -37,21 +37,10 @@ struct Input {
 				break;
 			case sf::Event::KeyPressed:
 				keys_pressed.push_back(event.key.code);
-
-				/*switch(event.key.code)
-				{
-				case sf::Keyboard::Up:
-					up_arrow_pressed = true;
-					printf("up \n");
-					break;
-				case sf::Keyboard::Down:
-					down_arrow_pressed = true;
-					printf("down \n");
-					break;
-				}*/
-
+				
+			case sf::Event::KeyReleased:
+				keys_released.push_back(event.key.code);
 				break;
-				//printf("|| \n");
 			}
 		}
 	}
@@ -62,5 +51,13 @@ struct Input {
 		return std::find(keys_pressed.begin(), keys_pressed.end(), key) != keys_pressed.end();
 	}
 
+	bool keyReleased(const sf::Keyboard::Key key)
+	{
+		return std::find(keys_released.begin(), keys_released.end(), key) != keys_released.end();
+	}
 
+	bool keyHeld(const sf::Keyboard::Key key)
+	{
+		return (keyPressed(key) && !keyReleased(key));
+	}
 };
